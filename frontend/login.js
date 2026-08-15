@@ -4,7 +4,7 @@ loginForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
     try {
@@ -26,9 +26,10 @@ loginForm.addEventListener("submit", async (event) => {
 
         console.log(data);
 
-        if (data.success) {
+        if (response.ok && data.success) {
 
-            // Login successful
+            localStorage.setItem("steppiToken", data.token);
+            localStorage.setItem("steppiUser", JSON.stringify(data.user));
             window.location.href = "/home";
 
         } else {
