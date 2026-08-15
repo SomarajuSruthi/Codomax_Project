@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steppi - Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    /* =========================
+   LOGIN PAGE
+========================= */
+
+body:has(#loginForm) {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Login heading */
+body:has(#loginForm) .head {
+    margin: 0 0 25px 0;
+
+    text-align: center;
+
+    font-size: 35px;
+
+    color: white !important;
+
+    text-shadow: 2px 2px 8px black;
+}
+
+/* Login form box */
+body:has(#loginForm) #loginForm {
+    width: 400px;
+
+    padding: 40px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+/* Email and password */
+body:has(#loginForm) #loginForm input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+/* Input focus */
+body:has(#loginForm) #loginForm input:focus {
+    border: 2px solid black;
+}
+
+/* Login button */
+body:has(#loginForm) #loginForm button {
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: black;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+/* Hover */
+body:has(#loginForm) #loginForm button:hover {
+    background-color: #333;
+}
+
+/* Message */
+body:has(#loginForm) #message {
+    margin-top: 15px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    body:has(#loginForm) #loginForm {
+        width: 90%;
+
+        padding: 30px 25px;
+    }
+
+    body:has(#loginForm) .head {
+        font-size: 28px;
+    }
+}
+</style>
+<body>
+
+        <h1  class="head" style="color:white;">Steppi Login</h1>
+
+
+
+    <form id="loginForm">
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <script src="./login.js"></script>
+
+</body>
+</html>
